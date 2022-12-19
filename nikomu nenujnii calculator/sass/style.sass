@@ -1,0 +1,259 @@
+@import "mixin"
+
+body
+  display: flex
+  justify-content: center
+  align-content: center
+  overflow: hidden
+  background: #222222 url("../img/1.png")
+  background-size: cover
+  backdrop-filter: blur(20px)
+
+*
+  margin: 0
+  padding: 0
+  user-select: none
+  cursor: none
+  font-family: Monocraft
+
+textarea
+  overflow: hidden
+  transition: .3s cubic-bezier(.75,-1.27,.3,2.33) height
+  &.resizing
+    transition: none
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100px
+    height: 100px
+    background: red
+
+.span
+  position: absolute
+  color: white
+  font-size: 36px
+  font-family: Arial
+  margin: 10px 0 0 10px
+
+
+.cursor
+  @include cursor(pink, 1488)
+
+  width: 10px
+  height: 10px
+  transform: scale(1)
+  transition: .3s cubic-bezier(.75,-1.27,.3,2.33) transform, .7s cubic-bezier(.75,-1.27,.3,2.33) opacity, .2s cubic-bezier(.21,.96,.97,.99)
+
+  &.active
+    @include cursorActive()
+  &.click
+    @include cursorClick()
+  &.out
+    @include cursorOut()
+
+
+.aura
+  @include cursor(transparent, 1337)
+
+  width: 46px
+  height: 46px
+  border: pink solid 2px
+  backdrop-filter: blur(1px)
+  transform: scale(1)
+  transition: .6s cubic-bezier(.21,.96,.97,.99)
+
+  &.active
+    @include auraActive()
+    &.click
+      @include auraClick($scale: 1.5)
+  &.click
+    @include auraClick($scale: 1.3)
+  &.out
+    @include cursorOut()
+
+
+/*            wrapper              */
+
+.wrapper
+  display: none
+  flex-direction: column
+
+  width: 600px
+  height: 600px
+  margin: 40px auto 0
+
+  border-radius: 1.5em
+  background: #323232
+  box-shadow: 20px 25px 100px black
+  z-index: 14888
+
+  transition: .2s cubic-bezier(.21,.96,.97,.99)
+
+
+@keyframes gay
+  0%
+    transform: translate(2px, 30%) rotate(72deg)
+
+  25%
+    transform: translate(160px, -60%) rotate(144deg)
+
+  50%
+    transform: translate(100px, -10%) rotate(216deg)
+
+  75%
+    transform: translate(54px, 120%) rotate(288deg)
+
+  100%
+    transform: translate(2px, 30%) rotate(72deg)
+
+
+
+
+
+
+/*            header              */
+
+.header
+  display: flex
+  flex-direction: row
+  align-items: center
+
+  width: 100%
+  height: 130px
+
+  border-bottom: 3px solid white
+
+
+.result
+  display: flex
+  flex-direction: row
+  align-items: center
+
+  padding: 0 0 0 10px
+  height: 90px
+  width: 480px
+  margin: 0 0 0 25px
+
+  border-radius: 3px
+  outline: none
+  border: none
+  font:
+    size: 45px
+  background: transparent
+  color: white
+
+  user-select: text
+
+  &::selection
+  background: rgb(46, 139, 87, .3)
+
+
+.clearAll 
+  color: rgb(46, 139, 87)
+  font-family: Arial
+  font-size: 50px
+  height: 70%
+  margin: 0 0 0 25px
+  border-radius: 15px
+  border: 0
+  background: transparent
+
+  user-select: none
+
+  &:hover
+    color: rgb(50, 142, 98)
+    &:active
+  color: rgb(46, 139, 87)
+
+
+
+
+/*            buttons             */
+
+.buttons 
+  margin: 10px 0 10px 20px
+
+
+.equal_button 
+  width: 100%
+
+
+.calc_button, .equal_button 
+  border-radius: 5.6em
+  border: 0
+  text-align: center
+
+  width: 100px
+  height: 100px
+  margin: 5px
+
+  color: white
+  background: rgb(46, 139, 87)
+  font-size: 50px
+  font-family: Arial
+
+  transition: .2s
+
+.calc_button:hover 
+  background: rgb(50, 142, 98)
+
+.calc_button:active, .equal_button:active 
+  transition: .05s
+  box-shadow: 1px 1px 1px 1px seagreen, -1px -1px 1px 1px seagreen
+  background: rgb(46, 139, 87)
+
+
+
+
+
+/*            true_calc             */
+
+.true_calc
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+
+.true_calc__operands
+  margin: 10px 0 0 0
+
+
+.true_calc__calc_input
+  resize: vertical
+  width: 300px
+  height: 80px
+  padding: 2px 0
+  text-align: center
+
+  color: white
+  font-size: 24px
+  border: 2px solid white
+  outline: seagreen
+  background: transparent
+  box-shadow: 1.5px 1.5px 1px orangered
+  backdrop-filter: blur(20px)
+
+  z-index: 1
+
+  &::selection
+    background: seagreen
+
+.true_calc__operand
+  padding: 10px 35px
+
+  color: white
+  font-family: Arial
+  font-size: 20px
+  border: white solid 2px
+  border-radius: 7px
+  background: transparent
+  backdrop-filter: blur(20px)
+
+  transition: .01s cubic-bezier(.11,.100,.97,.10)
+
+  &:active
+    border-color: orangered
+    color: orangered

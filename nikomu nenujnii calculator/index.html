@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="cursor out"></div>
+    <div class="aura out"></div>
+
+    <div class="true_calc">
+        <div class="textarea">
+            <textarea class="true_calc__calc_input a" placeholder="a"></textarea>
+            <textarea class="true_calc__calc_input b" placeholder="b"></textarea>
+            <textarea class="true_calc__calc_input c" placeholder="result" disabled></textarea>
+            <textarea class="true_calc__calc_input x" placeholder="x"></textarea>
+        </div>
+        <div class="true_calc__operands">
+            <button class="true_calc__operand operand" data-operand="add">+</button>
+            <button class="true_calc__operand operand" data-operand="sub">-</button>
+            <button class="true_calc__operand operand" data-operand="divide">/</button>
+            <button class="true_calc__operand operand" data-operand="mult">*</button>
+            <button class="true_calc__operand operand" data-operand="pow">**</button>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="header">
+            <input type="text" class="result">
+            <button class="clearAll">C</button>
+        </div>
+
+        <div class="real">
+            <div class="buttons">
+                <div class="inner_buttons">
+                    <button class="calc_button num_button" id="1">1</button>
+                    <button class="calc_button num_button" id="2">2</button>
+                    <button class="calc_button num_button" id="3">3</button>
+                    <button class="calc_button" data-operand="add" id="+">+</button>
+                    <button class="calc_button delLastEl">&larr;</button>
+                </div>
+
+                <div class="inner_buttons">
+                    <button class="calc_button num_button" id="4">4</button>
+                    <button class="calc_button num_button" id="5">5</button>
+                    <button class="calc_button num_button" id="6">6</button>
+                    <button class="calc_button" data-operand="sub" id="-">-</button>
+                    <button class="calc_button" id="i">i</button>
+                </div>
+
+                <div class="inner_buttons">
+                    <button class="calc_button num_button" id="7">7</button>
+                    <button class="calc_button num_button" id="8">8</button>
+                    <button class="calc_button num_button" id="9">9</button>
+                    <button class="calc_button" data-operand="mult" id="*">*</button>
+                    <button class="calc_button" id=";">;</button>
+                </div>
+
+                <div class="inner_buttons">
+                    <button class="calc_button num_button" id="(">(</button>
+                    <button class="calc_button num_button" id=")">)</button>
+                    <button class="calc_button num_button" id="0">0</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/Complex.js"></script>
+    <script src="js/Member.js"></script>
+    <script src="js/Vector.js"></script>
+    <script src="js/Matrix.js"></script>
+    <script src="js/Polynomial.js"></script>
+    <script src="js/Calculator.js"></script>
+    <script src="js/CalculatorHandler.js"></script>
+    <script src="js/RealCalculator.js"></script>
+    <script src="js/PolynomialCalculator.js"></script>
+    <script src="js/MatrixCalculator.js"></script>
+    <script src="js/ComplexCalculator.js"></script>
+    <script src="js/VectorCalculator.js"></script>
+    <script src="js/main.js"></script>
+
+    <!--<script src="js/typed.js"></script>
+    <script>
+        let typed = new Typed('.span', {
+            strings: ['Nicomu ne nujniy calculator', 'No Aleksei Sergeevich prosit, nado delat'],
+            fadeOut: true,
+            typeSpeed: 70,
+            loop: true,
+            fadeOutDelay: 400
+        });</script>-->
+
+</body>
+</html>
